@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - cv builder (created by me full code)</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CV BUILDER</title>
+	
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  </head>
+<body>
+<!-- 	<h1>cv builder</h1> -->
+
+<form name="formval"onsubmit="return false">
+ <div id="box">
+  		  <!--  <center><h3 >Enter your data</h3></center> -->
+		    <main>
+         <header class="animate__animated animate__fadeIn animate__slower">
+            <h1 id="title">BUILD YOUR CV</h1> 
+          <hr id ="hr">
+                   <label> Upload photo<span style="color:red;">*</span></label>
+         <input type='file' onchange="readURL(this);" /> 
+        <label>Name<span style="color:red;">*</span></label> 
+        <input name="pr_amt" type="text"class="input-field"placeholder="Enter Name"autocomplete="off" required>     
+        <label> Position<span style="color:red;">*</span></label>
+       <input name="int_rate" type="text"class="input-field"placeholder="Enter Position"autocomplete="off"required>
+                       
+      <label>Address<span style="color:red;">*</span></label> 
+      <input name="period" type="text"class="input-field"placeholder="Enter Adresss"autocomplete="off"required>
+            <label>Email<span style="color:red;">*</span></label> 
+      <input name="email" type="text"class="input-field"placeholder="Enter Email"autocomplete="off"required>
+            <label>Mobile number<span style="color:red;">*</span></label> 
+      <input name="mobile" type="text"class="input-field"placeholder="Enter Mobile number"autocomplete="off"required>
+      <label>skill<span style="color:red;">*</span></label> 
+      <textarea name="skill" name="w3review" rows="4" cols="50"id="skill"placeholder="Enter skill"required>  </textarea>
+      <label>Language 1<span style="color:red;">*</span></label> 
+      <input name="lang1" type="text"class="input-field"placeholder="Enter Language1"autocomplete="off"required>
+      <label>Language 2<span style="color:red;">*</span></label> 
+      <input name="lang2" type="text"class="input-field"placeholder="Enter Language2"autocomplete="off"required>
+      <label>Language 3</label> 
+      <input name="lang3" type="text"class="input-field"placeholder="Enter Language3(optional)"autocomplete="off">
+      <label>Work experience(if any)</label> 
+      <input name="wd" type="text"class="input-field"placeholder="Enter Designation"autocomplete="off"required>
+      <label>Period</label> 
+      <input name="due" type="text"class="input-field"placeholder="Enter Period"autocomplete="off"required>
+            <br>
+            <br>
+      <label>Summary</label> 
+      <textarea name="explain" name="w3review" rows="4" cols="50" id="summary"required>  </textarea>
+       <label> Qualification<span style="color:red;">*</span></label>
+      <label>Graduation<span style="color:red;">*</span></label> 
+      <input name="grad" type="text"class="input-field"placeholder="Enter College/Institute"autocomplete="off"required>
+      <label>Duration<span style="color:red;">*</span></label> 
+      <input name="graddur" type="text"class="input-field"placeholder="Enter Period"autocomplete="off"required>
+      <label>Marks (%)<span style="color:red;">*</span></label> 
+      <input name="s1" type="text"class="input-field"placeholder="Enter Marks"autocomplete="off"required>
+      <label>12th<span style="color:red;">*</span></label> 
+      <input name="grad1" type="text"class="input-field"placeholder="Enter School/Board"autocomplete="off"required>
+      <label>Duration<span style="color:red;">*</span></label> 
+      <input name="graddur1" type="text"class="input-field"placeholder="Enter Period"autocomplete="off"required>
+      <label>Marks (%)<span style="color:red;">*</span></label> 
+      <input name="s2" type="text"class="input-field"placeholder="Enter Marks"autocomplete="off"required>
+      <label>10th<span style="color:red;">*</span></label> 
+      <input name="grad3" type="text"class="input-field"placeholder="Enter School/Board"autocomplete="off"required>
+      <label>Duration<span style="color:red;">*</span></label> 
+      <input name="graddur3" type="text"class="input-field"placeholder="Enter Period"autocomplete="off"required>
+      <label>Marks (%)<span style="color:red;">*</span></label> 
+      <input name="s3" type="text"class="input-field"placeholder="Enter Marks"autocomplete="off"required>
+    
+
+    
+
+      <br></br>
+      <p id="demo"></p>
+           
+                    
+                  <button class="button button3"onclick="emires()">RESET</button>
+
+                  <button class="button button2"onclick="emi()">Generate</button>
+                </header>   
+            </main>
+            <footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+<a href="https://www.facebook.com/surajkumar889" target="_blank"><i class="fa fa-facebook-official"id="facebook"></a></i>&nbsp&nbsp
+    <a href="https://codepen.io/55fe6509-92f2-4a9e-b12f-d8a15e0141a4" target="_blank"><i class="fa fa-codepen"id="insta"></i></a>&nbsp&nbsp<a href="https://github.com/suraj156942" target="_blank"><i class="fa fa-github" id="skype"></i></a>  
+</footer>
+	</div>
+	<div class="box " id="bexresult"hidden>
+	
+    <body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container"id="image">
+          <img id="blah"  src="#" style="width:60%" alt="your image">
+    <!-- <img id="blah" src="#" alt="your image" /> -->
+
+      <!--     <div class="w3-display-bottomleft w3-container w3-text-black">
+     
+          </div> -->
+        </div>
+        <div class="w3-container" id="display">
+           <i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal"></i> <p id="name"></p>
+          <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><p id="position"></p>
+          <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><p id="place"></p>
+          <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><p id="email"></p>
+          <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><p id="mb"></p>
+          <hr>
+   
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <textarea id="w3review" name="w3review" rows="4" cols="50"style="resize:none; width: auto;"></textarea>
+          <hr>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <div class="lang">
+          <!-- <center><p>Language 1</p></center> -->
+          <div >
+              <input type="text" id="one">
+          </div>
+           <!-- <center><p>Language 2</p></center> -->
+          <div>
+             <input type="text" id="two">
+          </div>
+            <!-- <center><p>Language 3(optiopnal)</p></center>          -->
+          <div >
+            <input type="text" id="three">
+          </div>
+        </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird" >
+      <!-- <a href="#"onclick="window.print()">print</a> -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom" id="right">
+         <a href="#"onclick="window.print()">print</a>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience(if any)</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"id="WE"></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span id="duration"></span></h6>
+         <textarea id="work2" name="w3review" rows="4" cols="50"style="resize:none; width: auto;"></textarea>
+          <hr>
+        </div>
+        <!-- <div class="w3-container">
+          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+        </div>
+      </div>
+ -->
+      <div class="w3-container w3-card w3-white"id="r1">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+            <h2>Graduation</h2>
+            <hr>
+          <h5 class="w3-opacity"id="cr1"></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span id="cd1"></span></h6>
+          <p id="sum1"></p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h2>12th</h2>
+                <hr>
+          <h5 class="w3-opacity" id="cr2"></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span id="cd2"></span></h6>
+          <p id="sum2"></p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h2>10th</h2>
+                <hr>
+          <h5 class="w3-opacity" id="cr3"></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span id="cd3"></span></h6>
+          <p id="sum3"></p>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+<!--   <a href="#"onclick="window.print()">print</a> -->
+</div>
+
+
+
+</body>                           
+
+	</div>
+</form>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

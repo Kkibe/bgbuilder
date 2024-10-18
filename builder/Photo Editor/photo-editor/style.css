@@ -1,0 +1,971 @@
+.widget-container {
+  height: 100vh;
+  width: 100vw;
+  padding: 2em;
+  background-color: black;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.module-slider-control {
+  display: block;
+  width: 100%;
+  vertical-align: center;
+}
+.module-slider-control input {
+  outline: 0;
+}
+.module-slider-control input:focus,
+.module-slider-control input:active {
+  outline: 0;
+}
+.module-slider-control > * {
+  vertical-align: top;
+  line-height: 27px;
+  outline: none;
+}
+.module-control-group {
+  height: 45px;
+  width: 0px;
+  border: none;
+  transition: width 1s, flex 1s;
+  overflow: hidden;
+  flex: 0 1 0px;
+  order: 0;
+  align-self: stretch;
+  text-align: center;
+}
+.module-control-group .module-control-group_container {
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #efefef;
+}
+.module-control-group .module-control-group_tool-group-container {
+  display: inline-block;
+  height: 56px;
+  vertical-align: middle;
+  margin: 0 10px;
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #aaa;
+  background-color: #ededed;
+  padding: 2px 1.5em;
+  box-shadow: 0 1px 1px #fff, 0 -1px 1px #fff;
+}
+.module-control-group .module-control-group_tool-group-container:last-child {
+  border-right-width: 1px;
+}
+.module-control-group.is-open {
+  width: 100%;
+  flex: 1 1 auto;
+}
+.module-control-group_tool-switch {
+  display: inline-block;
+  vertical-align: middle;
+  border-width: 0 1px;
+  border-left-color: #bbb;
+  border-right-color: #eee;
+  border-style: solid;
+  background: #ddd;
+  border-radius: 0px;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  min-height: 45px;
+  width: 100%;
+}
+.module-control-group_tool-group-scale {
+  position: relative;
+  height: 56px;
+  min-width: 318px;
+}
+.module-control-group_tool-group-scale div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-scale > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-scale .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-scale .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-scale
+  .module-control-group_control-value
+  span {
+  color: #888;
+}
+.module-control-group_tool-group-scale .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-scale .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-scale .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-scale
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-scale .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-scale input[type="range"] {
+  cursor: pointer;
+  outline: 0;
+}
+.module-control-group_tool-group-scale input[type="range"]:active {
+  outline: 0;
+}
+.module-control-group_tool-group-scale input[type="range"]:focus {
+  outline: 0;
+}
+.module-control-group_tool-group-scale
+  .module-control-group_lower-control-container {
+  width: 100%;
+  height: 2.8em;
+}
+.module-control-group_tool-group-scale
+  .module-control-group_lower-control-container
+  .module-control-group_control-value {
+  display: block;
+  text-align: left;
+  width: 61px;
+  float: left;
+}
+.module-control-group_tool-group-scale
+  .module-control-group_lower-control-container
+  .module-control-group_resets {
+  display: block;
+  text-align: right;
+  width: 32px;
+  float: right;
+}
+.module-control-group_tool-group-crop {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-crop div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-crop > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-crop .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-crop .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-crop .module-control-group_control-value span {
+  color: #888;
+}
+.module-control-group_tool-group-crop .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-crop .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-crop .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-crop
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-crop .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-history {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-history div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-history > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-history .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-history .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-history
+  .module-control-group_control-value
+  span {
+  color: #888;
+}
+.module-control-group_tool-group-history .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-history .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-history .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-history
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-history .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-undo-redo {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-undo-redo div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-undo-redo > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-undo-redo .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-undo-redo .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-undo-redo
+  .module-control-group_control-value
+  span {
+  color: #888;
+}
+.module-control-group_tool-group-undo-redo .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-undo-redo .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-undo-redo
+  .module-control-group_resets
+  button
+  i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-undo-redo
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-undo-redo .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-rotate {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-rotate div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-rotate > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-rotate .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-rotate .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-rotate
+  .module-control-group_control-value
+  span {
+  color: #888;
+}
+.module-control-group_tool-group-rotate .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-rotate .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-rotate .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-rotate
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-rotate .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-rotate .module-photo-widget_rotation-value {
+  font-weight: bolder;
+  font-size: 1.6em;
+  display: inline-block;
+  width: 3em;
+  vertical-align: top;
+}
+.module-control-group_tool-group-rotate
+  .module-photo-widget_rotation-value
+  .photo-widget_control-value {
+  vertical-align: top;
+}
+.module-control-group_tool-group-save {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-save div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-save > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-save .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-save .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-save .module-control-group_control-value span {
+  color: #888;
+}
+.module-control-group_tool-group-save .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-save .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-save .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-save
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-save .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-save a.button {
+  border: solid 1px #aaa;
+  display: inline-block;
+  background: #ddd;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  height: 13px;
+  min-width: 13px;
+}
+.module-control-group_tool-group-reset {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-reset div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-reset > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-reset .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-reset .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-reset
+  .module-control-group_control-value
+  span {
+  color: #888;
+}
+.module-control-group_tool-group-reset .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-reset .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-reset .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-reset
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-reset .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group_tool-group-zoom {
+  position: relative;
+  height: 56px;
+}
+.module-control-group_tool-group-zoom div:first-child {
+  height: 2.6em;
+}
+.module-control-group_tool-group-zoom > * {
+  z-index: 2;
+  position: relative;
+}
+.module-control-group_tool-group-zoom .module-control-group_group-name {
+  font-size: 3em;
+  color: #cbcbcb;
+  font-weight: bolder;
+}
+.module-control-group_tool-group-zoom .module-control-group_control-value {
+  display: block;
+  float: left;
+  z-index: 2;
+  font-weight: bolder;
+  vertical-align: bottom;
+  font-size: 2em;
+  height: 32px;
+  min-width: 3em;
+  line-height: 32px;
+}
+.module-control-group_tool-group-zoom .module-control-group_control-value span {
+  color: #888;
+}
+.module-control-group_tool-group-zoom .module-control-group_resets {
+  display: block;
+  float: right;
+  z-index: 2;
+  vertical-align: bottom;
+  height: 32px;
+  line-height: 32px;
+}
+.module-control-group_tool-group-zoom .module-control-group_resets button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: color 0.5s;
+  color: #888;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.module-control-group_tool-group-zoom .module-control-group_resets button i {
+  vertical-align: top;
+}
+.module-control-group_tool-group-zoom
+  .module-control-group_resets
+  button:hover {
+  color: black;
+}
+.module-control-group_tool-group-zoom .module-control-group_group-name {
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 2.8em;
+}
+.module-control-group .module-control-group_crop-button {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  display: inline-block;
+}
+.photo-widget {
+  font-size: 67.2%;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+.photo-widget.is-column-layout {
+  flex-direction: column;
+}
+.photo-widget.is-column-reverse-layout {
+  flex-direction: column-reverse;
+}
+.photo-widget.is-row-reverse-layout {
+  flex-direction: row-reverse;
+}
+.photo-widget .photo-widget_tools {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: stretch;
+  background-color: #eee;
+}
+.photo-widget .photo-widget_workspace {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: stretch;
+  overflow: hidden;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+.photo-widget .photo-widget_workspace.has-photo .photo-widget_editor {
+  z-index: 3;
+}
+.photo-widget
+  .photo-widget_workspace.has-photo
+  .photo-widget_upload-instructions {
+  z-index: 2;
+}
+.photo-widget
+  .photo-widget_workspace.is-dragover
+  .photo-widget_upload-instructions {
+  background-color: grey;
+}
+.photo-widget .photo-widget_workspace.is-photo-big .photo-widget_editor canvas {
+  top: 0;
+  transform: none;
+}
+.photo-widget_editor {
+  background: white;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.photo-widget_upload-instructions {
+  overflow: hidden;
+  outline: 2px dashed #aaa;
+  outline-offset: -6px;
+  margin: 0;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+.photo-widget_upload-instructions p {
+  text-align: center;
+  font-size: 2em;
+  line-height: 100%;
+}
+.photo-widget_upload-instructions p label {
+  color: lightblue;
+  transition: 0.5s color;
+  cursor: pointer;
+}
+.photo-widget_upload-instructions p label:hover {
+  color: blue;
+}
+.photo-widget_upload-instructions p label input {
+  display: none;
+}
+.photo-widget_upload-instructions .hasDrag {
+  display: none;
+}
+.photo-widget_upload-instructions .doesNotHaveDrag {
+  display: block;
+}
+.photo-widget_upload-instructions.has-advanced-upload .hasDrag {
+  display: block;
+}
+.photo-widget_upload-instructions.has-advanced-upload .doesNotHaveDrag {
+  display: none;
+}
+.photo-widget_editor canvas {
+  display: block;
+  border: solid 1px #aaa;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  z-index: 4;
+  transform: translateY(-50%);
+}
+.photo-widget_editor canvas.is-moving {
+  cursor: move;
+}
+.photo-widget_editor canvas.is-cropping {
+  cursor: nwse-resize;
+}
+.photo-widget_toolbar {
+  min-height: 3em;
+  padding: 0;
+  border: none;
+  vertical-align: middle;
+}
+.photo-widget_toolbar > label {
+  font-size: 1em;
+  display: block;
+  margin: 0.1em;
+  min-height: 2em;
+  background-color: #eee;
+  padding: 0.1em;
+}
+.photo-widget_toolbar .photo-widget_blocky-label {
+  display: block;
+}
+.photo-widget_tabs {
+  width: 100%;
+  height: 45px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+.photo-widget_tabs .photo-widget_tab {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: stretch;
+  overflow: hidden;
+  text-align: center;
+}
+.photo-widget_tab-panels {
+  border-top: solid 1px #999;
+  width: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  height: 60px;
+}
+.photo-widget_tab-panels .photo-widget_control-group {
+  height: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+button {
+  border: solid 1px #aaa;
+  background: #ddd;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  outline: none;
+}
+button.is-active {
+  background-color: #969696;
+}
+.photo-widget_boolean-button {
+  margin: 0 0.2rem;
+}
+.photo-widget_boolean-button span.photo-widget_boolean-button-active {
+  display: none;
+}
+.photo-widget_boolean-button span.photo-widget_boolean-button-inactive {
+  display: inline;
+}
+.photo-widget_boolean-button.is-active span.photo-widget_boolean-button-active {
+  display: inline;
+}
+.photo-widget_boolean-button.is-active
+  span.photo-widget_boolean-button-inactive {
+  display: none;
+}
+.photo-widget_boolean-button-crop {
+  margin: 0 0.2rem;
+  display: none;
+}
+.photo-widget_boolean-button-crop.is-active {
+  display: inline;
+}
+.spinner-box {
+  position: relative;
+  top: 50%;
+  z-index: 4;
+  transform: translateY(-50%);
+  height: 140px;
+  padding-top: 40px;
+  width: 182px;
+  margin: 0 auto;
+}
+.spinner {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 100, 0.5);
+  margin: 5em auto;
+  position: relative;
+}
+.spinner span:first-child {
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  height: 0;
+  width: 0;
+  border-left: solid 65px transparent;
+  border-right: solid 65px transparent;
+  border-top: solid 65px rgba(255, 100, 100, 0.5);
+  border-bottom: solid 65px transparent;
+  border-radius: 50% 50% 0 0;
+  animation: spin 9s linear infinite;
+}
+.spinner span:nth-child(2) {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  height: 0;
+  width: 0;
+  border-left: solid 40px transparent;
+  border-right: solid 40px transparent;
+  border-top: solid 40px rgba(100, 100, 255, 0.5);
+  border-bottom: solid 40px transparent;
+  border-radius: 50% 50% 0 0;
+  animation: spinBackwards 2s linear infinite;
+}
+.spinner span:last-child {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: block;
+  height: 0;
+  width: 0;
+  border-left: solid 60px transparent;
+  border-right: solid 60px transparent;
+  border-top: solid 60px rgba(100, 255, 100, 0.5);
+  border-bottom: solid 60px transparent;
+  border-radius: 50% 50% 0 0;
+  animation: spinBackwards 15s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinBackwards {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.is-active.module_control_group-tool_switch {
+  border-right-color: #777;
+  border-left-color: #666;
+}
+.is-hidden {
+  display: none;
+}
+.is-cropping.photo-widget_editor {
+  cursor: url(../assets/crop.png), default;
+}
+.is-loading.photo-widget_editor {
+  cursor: url(../assets/spinner10.png), default;
+}
+.is-saving.photo-widget_editor {
+  cursor: url(../assets/spinner10.png), default;
+}
+.is-busy.photo-widget_editor {
+  cursor: url(../assets/spinner10.png), default;
+}

@@ -1,0 +1,11 @@
+{
+    "name": "image-editor",
+    "version": "1.0.0",
+    "description": "",
+    "author": {
+      "name": "Kibet",
+      "email": "charleykibet254@gmail.com"
+    },
+    "manifest_version" : 3
+    
+}

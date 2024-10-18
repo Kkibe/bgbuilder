@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+canvas {
+  min-width: 100%;
+}
+
+.topTools {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  transition: all 0.3s;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.topTools a {
+  color: black;
+  text-decoration: none;
+}
+.topTools > * {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.top-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  top: 50px;
+  left: calc(100vw/2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.underTools {
+  position: absolute;
+  bottom: 40px;
+  left: 15%;
+  width: 70%;
+  border-radius: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  padding-top: 22px;
+  padding-bottom: 22px;
+  transition: all 0.3s;
+}
+.underTools > * {
+  margin-right: 40px;
+  cursor: pointer;
+}
+.underTools .color {
+  display: flex;
+  align-items: center;
+}
+.underTools ul {
+  display: flex;
+  margin-left: 10px;
+}
+.underTools .cl {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 10px;
+  position: relative;
+}
+.underTools .cl.active:before {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: rotate(45deg) translate(-50%);
+  content: "";
+  width: 8px;
+  height: 14px;
+  border-right: 2px solid #f2894d;
+  border-bottom: 2px solid #f2894d;
+}
+.underTools .cl.cl1 {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.underTools .cl.cl2 {
+  background-color: #000000;
+}
+.underTools .cl.cl3 {
+  background-color: #9BFFCD;
+}
+.underTools .cl.cl4 {
+  background-color: #00CC99;
+}
+.underTools .cl.cl5 {
+  background-color: #01936F;
+}
+.underTools .size input {
+  max-width: 74px;
+  background-color: #e8e8e8;
+  border-radius: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+}
+
+.under-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  bottom: 112px;
+  left: calc(100vw/2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.extra {
+  position: absolute;
+  bottom: 92px;
+  left: 15%;
+  width: 15%;
+  background-color: #fff;
+  border-radius: 42px;
+  padding-left: 5px;
+  transition: bottom 1s;
+  z-index: -1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.extra > * {
+  cursor: pointer;
+}

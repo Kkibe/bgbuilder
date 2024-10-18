@@ -1,0 +1,50 @@
+body{
+  position:absolute;
+  align-items:center;
+  text-align:center;
+}
+div{
+   width:350px;
+   height:300px;
+   position: relative;
+   display:flex;
+  
+   border: 2px dotted black;
+   padding: 10px;
+   text-align:center;
+   align-items:center;
+   top:100px;
+   left:250px
+}
+
+
+#parag{
+  position:absolute;
+  diplay:block;
+  width:90%;
+  padding:10px;
+  margin:0 0 7px;
+  text-align:center;
+  align-items:center;
+  border-radius:10px;
+}
+
+       
+button{
+    width:100px;
+    height:50px;
+    bottom:70px;
+    left:130px;
+    position:absolute;
+    background-color: rgb(26, 104, 142);
+    border-radius:20px;
+    decoration:none;
+    font-size:1.1em;
+}
+
+button:hover{
+  cursor:pointer;
+  background-color:rgb(26, 125, 158);
+  font-size:1.2em;
+ 
+}

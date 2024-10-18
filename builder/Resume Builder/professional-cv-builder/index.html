@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Smart Wizard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="mainQuestions" class="questions main">
+	<h1>What type of student are you?</h1>
+	<div class="answers">
+		<input type="radio" id="high-school" name="question-1" />
+		<label for="high-school">High School</label>
+
+		<input type="radio" id="college" name="question-1" />
+		<label for="college">College</label>
+
+		<input type="radio" id="career" name="question-1" />
+		<label for="career">Career</label>
+
+		<input type="radio" id="graduate" name="question-1" />
+		<label for="graduate">Graduate</label>
+
+		<input type="radio" id="international" name="question-1" />
+		<label for="international">International</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkMain()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #hsQuestions -->
+<div id="hsQuestions" class="questions high-school hide">
+	<h1>I want to...</h1>
+	<div class="answers">
+		<input type="radio" id="hsTestPrep" name="hs-1" />
+		<label for="hsTestPrep">Prepare for a test.</label>
+
+		<input type="radio" id="hsBasicSkills" name="hs-1" />
+		<label for="hsBasicSkills">Get general basic skills or STEM help.</label>
+
+		<input type="radio" id="hsSearch" name="hs-1" />
+		<label for="hsSearch">Search for a school or scholarship.</label>
+
+		<input type="radio" id="hsCareerAdvice" name="hs-1" />
+		<label for="hsCareerAdvice">Get career advice.</label>
+
+		<input type="radio" id="hsEquivalency" name="hs-1" />
+		<label for="hsEquivalency">Prep for a high school equivalency exam.</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkHs1()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #hsQuestions2 -->
+<div id="hsQuestions2" class="questions high-school hide">
+	<h1>Is it...</h1>
+	<div class="answers">
+		<input type="radio" id="hsApSat" name="hs-2" />
+		<label for="hsApSat">An AP or SAT subject test?</label>
+
+		<input type="radio" id="hsExam" name="hs-2" />
+		<label for="hsExam">A high school entrance or end of year/state exam?</label>
+
+		<input type="radio" id="hsCollegeExam" name="hs-2" />
+		<label for="hsCollegeExam">A college entrance exam?</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkHs2()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #collegeQuestions -->
+<div id="collegeQuestions" class="questions college hide">
+	<h1>I want to...</h1>
+	<div class="answers">
+		<input type="radio" id="colSearch" name="col-1" />
+		<label for="colSearch">Search for a school or scholarship.</label>
+
+		<input type="radio" id="colExam" name="col-1" />
+		<label for="colExam">Practice for a college entrance exam.</label>
+
+		<input type="radio" id="colCareerAdvice" name="col-1" />
+		<label for="colCareerAdvice">I need career advice.</label>
+
+		<input type="radio" id="colTakeTest" name="col-1" />
+		<label for="colTakeTest">Take a DSST or CLEP test.</label>
+
+		<input type="radio" id="colCreateResume" name="col-1" />
+		<label for="colCreateResume">Create a resume.</label>
+
+		<input type="radio" id="colBasicSkills" name="col-1" />
+		<label for="colBasicSkills">Get general basic skills or STEM help.</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkCollege()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #careerQuestions -->
+<div id="careerQuestions" class="questions career hide">
+	<h1>I want to...</h1>
+	<div class="answers">
+		<input type="radio" id="carCreateResume" name="car-1" />
+		<label for="carCreateResume">Create a resume.</label>
+
+		<input type="radio" id="carCareerExam" name="car-1" />
+		<label for="carCareerExam">Practice for a career related exam.</label>
+
+		<input type="radio" id="carActWorkkeys" name="car-1" />
+		<label for="carActWorkkeys">Prep for ACT WorkKeys.</label>
+
+		<input type="radio" id="carBasicSkills" name="car-1" />
+		<label for="carBasicSkills">Get general basic skills or STEM help.</label>
+
+		<input type="radio" id="carHsEquivalency" name="car-1" />
+		<label for="carHsEquivalency">Prep for a high school equivalency exam.</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkCareer()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #graduateQuestions -->
+<div id="graduateQuestions" class="questions graduate hide">
+	<h1>I want to...</h1>
+	<div class="answers">
+		<input type="radio" id="gradSearch" name="grad-1" />
+		<label for="gradSearch">Search for a grad school or scholarship.</label>
+
+		<input type="radio" id="gradExam" name="grad-1" />
+		<label for="gradExam">Prepare for a grad school exam.</label>
+
+		<input type="radio" id="gradCreateResume" name="grad-1" />
+		<label for="gradCreateResume">Create a resume.</label>
+
+		<input type="radio" id="gradCareerAdvice" name="grad-1" />
+		<label for="gradCareerAdvice">I need career advice.</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkGrad()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+
+<!-- #internationalQuestions -->
+<div id="internationalQuestions" class="questions international hide">
+	<h1>I want to...</h1>
+	<div class="answers">
+		<input type="radio" id="intPrep" name="int-1" />
+		<label for="intPrep">Prepare for the TOEFL or TOEIC.</label>
+
+		<input type="radio" id="intUsCitizen" name="int-1" />
+		<label for="intUsCitizen">Get information for U.S. Citizenship.</label>
+
+		<input type="radio" id="intBasicSkills" name="int-1" />
+		<label for="intBasicSkills">Get general basic skills help.</label>
+	</div> <!-- .answers -->
+	<div class="buttons">
+		<button class="previous" onClick="###" disabled>
+			<i class="fa fa-arrow-left"> Previous</i>
+		</button>
+		<button class="next" onClick="checkInt()">
+			Next <i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</div> <!-- .questions -->
+<!-- QUESTION BLOCKS -->
+
+<!-- LINKS TO DISPLAY -->
+<!-- .high-school -->
+<ul id="hsApSatLinks" class="high-school links hide">
+	<li>AP Prep</li>
+	<li>SAT Subjects Prep</li>
+</ul>
+
+<ul id="hsExamLinks" class="high-school links hide">
+	<li>Catholic HS Entrance Exam Prep</li>
+	<li>Florida Standards Assessment (FSA) Prep</li>
+	<li>Independent and Specialized High School Entrance Exams Prep</li>
+	<li>STAAR Prep http://tercdev.nelnetsolutions.com/hubpage/hub/staar</li>
+</ul>
+
+<ul id="hsCollegeExamLinks" class="high-school links hide">
+	<li>ACT Prep</li>
+	<li>PSAT Prep</li>
+	<li>SAT Prep</li>
+	<li>SAT Subjects Prep</li>
+</ul>
+
+<ul id="hsBasicSkillsLinks" class="high-school links hide">
+	<li>English/Writing Tutorials</li>
+	<li>Math Tutorials</li>
+	<li>Basic Skills Question Banks</li>
+	<li>STEM Resources</li>
+</ul>
+
+<ul id="hsSearchLinks" class="high-school links hide">
+	<li>Private Secondary School Search</li>
+	<li>School and Scholarship Search</li>
+	<li>School Search</li>
+</ul>
+
+<ul id="hsCareerAdviceLinks" class="high-school links hide">
+	<li>Career Assessment</li>
+</ul>
+
+<ul id="hsEquivalencyLinks" class="high-school links hide">
+	<li>High School Equivalency Prep</li>
+</ul>
+<!-- .high-school -->
+
+<!-- .college -->
+<ul id="colSearchLinks" class="college links hide">
+	<li>School and Scholarship Search</li>
+</ul>
+
+<ul id="colExamLinks" class="college links hide">
+	<li>ACT Prep</li>
+	<li>SAT Prep</li>
+</ul>
+
+<ul id="colCareerAdviceLinks" class="college links hide">
+	<li>Career Assessment</li>
+	<li>Virtual Career Library</li>
+</ul>
+
+<ul id="colTakeTestLinks" class="college links hide">
+	<li>CLEP Prep</li>
+	<li>DSST Prep</li>
+</ul>
+
+<ul id="colCreateResumeLinks" class="college links hide">
+	<li>Resume Builder</li>
+</ul>
+
+<ul id="colBasicSkillsLinks" class="college links hide">
+	<li>English/Writing Tutorials</li>
+	<li>Math Tutorials</li>
+	<li>Basic Skills Question Banks</li>
+	<li>STEM Resources</li>
+</ul>
+<!-- .college -->
+
+<!-- .career -->
+<ul id="carAdviceLinks" class="career links hide">
+	<li>Career Assessment</li>
+	<li>Virtual Career Library</li>
+</ul>
+
+<ul id="carCreateResumeLinks" class="career links hide">
+	<li>Resume Builder</li>
+</ul>
+
+<ul id="carExamLinks" class="career links hide">
+	<li>Accountant/Auditor Prep</li>
+	<li>American Foreign Service Officer Prep</li>
+	<li>Clerical/Civil Service Prep</li>
+	<li>Cosmetology Prep</li>
+	<li>Firefighter Prep</li>
+	<li>Law Enforcement Careers Prep</li>
+	<li>Medical/Nursing Prep</li>
+	<li>Military Prep</li>
+	<li>Postal Prep</li>
+	<li>Real Estate</li>
+	<li>Social Work Careers Prep</li>
+	<li>Teacher</li>
+</ul>
+
+<ul id="carActWorkkeysLinks" class="career links hide">
+	<li>ACT WorkKeys Prep</li>
+</ul>
+
+<ul id="carBasicSkillsLinks" class="career links hide">
+	<li>English/Writing Tutorials</li>
+	<li>Math Tutorials</li>
+	<li>Basic Skills Question Banks</li>
+</ul>
+
+<ul id="carHsEquivalencyLinks" class="career links hide">
+	<li>High School Equivalency Prep</li>
+</ul>
+<!-- .career -->
+
+<!-- .graduate -->
+<ul id="gradSearchLinks" class="graduate links hide">
+	<li>Grad School and Scholarship Search</li>
+</ul>
+
+<ul id="gradExamLinks" class="graduate links hide">
+	<li>GMAT</li>
+	<li>GRE Prep</li>
+	<li>LSAT Prep</li>
+	<li>MCAT Prep</li>
+	<li>Miller Analogies (MAT) Prep</li>
+</ul>
+
+<ul id="gradCreateResumeLinks" class="graduate links hide">
+	<li>Resume Builder</li>
+</ul>
+
+<ul id="gradCareerAdviceLinks" class="graduate links hide">
+	<li>Career Assessment</li>
+	<li>Virtual Career Library</li>
+</ul>
+<!-- .graduate -->
+
+<!-- .international -->
+<ul id="intPrepLinks" class="international links hide">
+	<li>TOEFL Prep</li>
+	<li>TOEIC Prep</li>
+</ul>
+
+<ul id="intUsCitizenLinks" class="international links hide">
+	<li>U.S. Citizenship Prep</li>
+</ul>
+
+<ul id="intBasicSkillsLinks" class="international links hide">
+	<li>English/Writing Tutorials</li>
+	<li>Math Tutorials</li>
+	<li>Basic Skills Question Banks</li>
+</ul>
+<!-- .international -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

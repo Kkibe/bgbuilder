@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Yet another 2d tile map editor</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+<div class="app">
+  <div class="menu">
+    <div class="surface btn" id="btn-new" title="Create a new map" onclick="newMap()"><i class="fa fa-plus"></i><span>New map</span></div>
+    <div class="surface btn" id="btn-load" title="Load a map using mapdata" onclick="loadMap()"><i class="fa fa-folder-open"> </i><span>Load</span></div>
+    <div class="surface btn" id="btn-save" title="Save/Export this map" onclick="saveMap()"><i class="fa fa-save"></i><span>Save</span></div>
+    <div class="surface btn" id="btn-settings" title="Change editor or map preferences" onclick="showSettings()"><i class="fa fa-cog"></i><span>Settings</span></div>
+    <div class="surface btn" id="btn-info" title="Totally about this tool!" onclick="showAbout()"><i class="fa fa-info"></i><span>About</span></div>
+  </div>
+  <div class="workspace">
+    <div class="project">
+      <div class="tab-header">Map layers</div>
+      <div class="surface tab">
+        <div class="project-tools">
+          <div class="surface btn" id="btn-layer-group" title="Create a new group" onclick="createLayerGroup()"><i class="fa fa-folder"></i></div>
+          <div class="surface btn" id="btn-layer-add" title="Create a layer" onclick="createLayer()"><i class="fa fa-file-o">   </i></div>
+          <div class="surface btn req-layer" id="btn-layer-duplicate" title="Duplicate layer" onclick="duplicateLayer(this)" disabled="disabled"><i class="fa fa-files-o"></i></div>
+          <div class="surface btn req-layer" id="btn-layer-up" title="Move group or layer upwards" onclick="moveLayerUp(this)" disabled="disabled"><i class="fa fa-arrow-up"></i></div>
+          <div class="surface btn req-layer" id="btn-layer-down" title="Move group or layer downwards" onclick="moveLayerDown(this)" disabled="disabled"><i class="fa fa-arrow-down"> </i></div>
+          <div class="surface btn req-layer" id="btn-layer-remove" title="Remove group or layer" onclick="removeLayerOrGroup(this)" disabled="disabled"><i class="fa fa-trash-o">             </i></div>
+        </div>
+        <div class="project-item-list" id="style-4">
+          <ul class="project-item-tree"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="tab-header">Map editor</div>
+      <div class="surface tab">
+        <div class="editor-container">
+          <div class="editor-tools">
+            <div class="surface btn active" id="btn-editor-cursor" title="Selector tool - select objects to edit their properties" onclick="selectEditorTool('cursor')"><i class="fa fa-mouse-pointer"></i></div>
+            <div class="surface btn" id="btn-editor-brush" title="(1) Brush tool - paint tiles" onclick="selectEditorTool('brush')"><i class="fa fa-paint-brush"></i></div>
+            <div class="surface btn" id="btn-editor-eraser" title="(2) Eraser tool - erase tile data" onclick="selectEditorTool('eraser')"><i class="fa fa-eraser"></i></div>
+            <div class="surface btn" id="btn-editor-move" title="(3) Drag tool - pan around the map editor, you can also hold down (alt)" onclick="selectEditorTool('move')"><i class="fa fa-arrows"></i></div>
+            <div class="surface btn" id="btn-editor-zout" title="(-) Zoom out" onclick="zoomOut()"><i class="fa fa-search-minus"></i></div>
+            <div class="surface btn" id="btn-editor-zin" title="(+) Zoom in" onclick="zoomIn()"><i class="fa fa-search-plus"></i></div>
+          </div>
+          <div class="surface editor-border">
+            <canvas class="editor"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="selector">
+      <div class="tab-header">Inspector</div>
+      <div class="surface tab inspector">
+        <div class="item-details"><i class="item-type-icon"></i>
+          <input class="item-name"/>
+        </div>
+        <div class="group-tools"></div>
+        <div class="layer-tools">
+          <div class="brush-size">
+            <div class="input-header">Brush settings</div>
+            <div class="input-row">
+              <label for="brush-size">Size:</label>
+              <input type="text" value="1" onchange="brushSizeChanged()" id="brush-size"/>
+            </div>
+          </div>
+          <div class="tile-selector">
+            <div class="tile-tools">
+              <div class="surface btn" id="btn-tiles-previous" onclick="previousTilePage()"><i class="fa fa-angle-left"></i></div>
+              <div class="surface btn" id="btn-tiles-next" onclick="nextTilePage()"><i class="fa fa-angle-right"></i></div>
+            </div>
+            <div class="tile-list" id="style-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="window-tint">       </div>
+<div class="window surface" id="create-map-window">
+  <div class="window-title-bar">
+    <h4>New map</h4>
+    <div class="surface btn" onclick="cancelCreateMap()"><i class="fa fa-close"></i></div>
+  </div>
+  <div class="window-body">
+    <p>Warning: Creating a new map will discard your current progress!</p>
+    <div class="input-header">Select perspective</div>
+    <div class="input-row">
+      <input class="map-perspective" id="p-2d-default" name="map-perspective" type="radio" value="top" checked="checked"/>
+      <label for="p-2d-default">2D default</label>
+    </div>
+    <div class="input-row">
+      <input class="map-perspective" id="p-2d-isometric" name="map-perspective" value="iso" type="radio"/>
+      <label for="p-2d-isometric">2D isometric</label>
+    </div>
+    <div class="newline"></div>
+    <div class="input-header">Map/grid size</div>
+    <div class="input-row">
+      <label for="input-map-width">Width :</label>
+      <input type="text" placeholder="eg. 32" id="input-map-width"/>
+    </div>
+    <div class="input-row">
+      <label for="input-map-height">Height:</label>
+      <input type="text" placeholder="eg. 32" id="input-map-height"/>
+    </div>
+  </div>
+  <div class="window-actions">
+    <div class="surface btn" onclick="cancelCreateMap()">Cancel</div>
+    <div class="surface btn" onclick="createMap()">OK</div>
+  </div>
+</div>
+<div class="window surface" id="load-map-window">
+  <div class="window-title-bar">
+    <h4>Load map</h4>
+    <div class="surface btn" onclick="cancelLoadMap()"><i class="fa fa-close"></i></div>
+  </div>
+  <div class="window-body">
+    <p>Warning: Loading a map will discard your current progress!</p>
+    <div class="input-header">Paste your map data here (not implemented)</div>
+    <div class="input-row">  
+      <textarea placeholder="Paste your map data here" id="input-map-data"></textarea>
+    </div>
+  </div>
+  <div class="window-actions">
+    <div class="surface btn" onclick="cancelLoadMap()">Cancel</div>
+    <div class="surface btn" onclick="openMap()">OK</div>
+  </div>
+</div>
+<div class="window surface" id="load-tilesets-window">
+  <div class="window-title-bar">
+    <h4>Loading tilesets...</h4>
+  </div>
+  <div class="window-body">
+    <p>Please wait while we load the tilesets </p>
+    <div class="progress-bar">
+      <div class="progress-bar-value"></div>
+    </div>
+  </div>
+</div><img class="toasty" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/163870/Toasty!MK3.png"/>
+<!-- partial -->
+  <script src='https://codepen.io/zerratar/pen/EwLYgL.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

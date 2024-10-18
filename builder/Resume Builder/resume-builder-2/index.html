@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Final V2</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang='en'>
+<body>
+<style id="snazzy">
+  h1{
+    font-family: "Helvetica", sans-serif;
+    font-size: 25px;
+   
+    }</style> 
+<form id="form1">
+  <h1><u>Professional Resume Builder</u></h1>
+   <p id = "intro">Please enter your information in the form below.  Click "submit" when you are finished. </p> 
+
+  First name:<br> <input id="fname" type="text" name="fname"><br>
+  Last name: <br> <input id="lname" type="text" name="lname"><br>
+   Street Address Line 1: <br> <input id="add1" type="text" name="add1"><br>
+ Street Address Line 2: <br><input id="add2" type="text" name="add2"><br>
+  
+ City:<br>  <input id="city" type="text" name="city1"><br>
+ Country:<br> <select id="country" name="country" onchange=setStates(this)>
+            <option value="Select">Select Country</option>
+            <option value="USA">United States</option>
+            <option value="Canada">Canada</option>
+        </select><br>
+
+State: <br> <select name="state" id="state">
+  <option value="select">Select state/province</option></select><br>
+  
+Zipcode: <br> <input id="zip" type="text" name="zip"><br>
+  
+Education Level:<br> <select id="college" name="college"><option value="---">---</option><option value="Less than high School">Less than High School</option><option value="High School Diploma">High School Diploma</option><option value="Some College">Some College</option><option value="Associates Degree">Associates Degree</option><option value="Certificate Program">Certificate Program</option><option value="Bachelor's Degree">Bachelor's Degree</option><option value="Master's Degree">Master's Degree</option><option value="Doctorate or Professional Degree"> Doctorate or Professional Degree</option></select><br>
+  Occupation:<br> <input id="occ" type="text" name="occ"><br>
+  Company: <br><input id="comp" type="text" name="comp1"><br>
+  
+  <p>Please describe your interests and hobbies in the text area below:</p><textarea name="textbox" id="textbox" cols="60" rows="8" maxlength="350"></textarea><br><br>
+  
+<input type = "button" onclick = "newWindow(); myFunction()" Value="Submit" ></form>
+    </body>
+  </html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+select, button, input {
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  outline: none;
+  border: none;
+  appearance: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+html, body, menu, main, nav, header, ul {
+  color: rgba(0, 155, 215, 0.75);
+  letter-spacing: 0.05em;
+  position: absolute;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-weight: 100;
+  right: 0;
+  left: 0;
+}
+
+html, body {
+  bottom: 0;
+  top: 0;
+}
+
+menu, nav {
+  background-color: rgba(0, 155, 215, 0.85);
+  height: 90px;
+  color: white;
+}
+
+menu {
+  top: 0;
+}
+
+main {
+  top: 90px;
+  bottom: 90px;
+}
+
+nav {
+  white-space: nowrap;
+  vertical-align: middle;
+  bottom: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  line-height: 90px;
+  font-size: 32px;
+  height: 90px;
+  padding: 0 15px;
+}
+
+label {
+  font-size: 13px;
+  padding: 5px 15px;
+  display: block;
+}
+
+select {
+  background-color: white;
+  border: 2px solid white;
+  color: #009bd7;
+  vertical-align: middle;
+  display: inline-block;
+  margin: -30px 15px 0 0;
+  padding: 10px 35px 10px 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+i {
+  position: absolute;
+  display: inline-block;
+  pointer-events: none;
+  border-top: 7px solid #009bd7;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-top: 43px;
+  margin-left: -35px;
+  z-index: 2;
+}
+
+ul {
+  top: 0;
+  bottom: 0;
+  right: 64px;
+}
+ul .slider {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: auto;
+  white-space: nowrap;
+}
+ul .word {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  background-color: rgba(0, 155, 215, 0.1);
+  width: 300px;
+  vertical-align: middle;
+  transition: background 0.1s ease-in-out;
+}
+ul .word:nth-of-type(even) {
+  background-color: rgba(0, 155, 215, 0.025);
+}
+ul .word.playing, ul .word:nth-of-type(even).playing {
+  background-color: rgba(0, 155, 215, 0.5);
+  color: white;
+}
+ul .word:hover .settings * {
+  transition-delay: 0s;
+  opacity: 1;
+}
+ul .word .string {
+  font-weight: 100;
+  width: 250px;
+  color: white;
+  text-align: center;
+  line-height: 36px;
+  height: 36px;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(0, 155, 215, 0.75);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+ul .word .position {
+  position: absolute;
+  bottom: 140px;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+ul .word .settings {
+  position: absolute;
+  background-color: rgba(0, 155, 215, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 140px;
+  bottom: 0;
+}
+ul .word .settings * {
+  transition: opacity 0.15s ease-in-out;
+  transition-delay: 0.25s;
+  opacity: 0;
+}
+ul .word .settings .play, ul .word .settings .delete {
+  margin: 10px 10px 0 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 155, 215, 0.4);
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+ul .word .settings .play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-left: 8px solid white;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin: -5px 0 0 -3px;
+}
+ul .word .settings .delete:before, ul .word .settings .delete:after {
+  content: "";
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  background-color: white;
+  margin: -5px 0 0 -1px;
+  height: 10px;
+  width: 2px;
+  left: 50%;
+  top: 50%;
+}
+ul .word .settings .delete:before {
+  transform: rotate(-45deg);
+}
+ul .word .settings .delete:after {
+  transform: rotate(45deg);
+}
+ul .word .settings label {
+  display: block;
+  text-align: left;
+}
+ul .word .settings input[type="range"] {
+  border-radius: 30px;
+  background-color: rgba(0, 155, 215, 0.4);
+  padding: 3px;
+  width: 264px;
+  margin-bottom: 15px;
+}
+ul .word .settings input[type=range]::-webkit-slider-thumb {
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  outline: none;
+  border: none;
+  appearance: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border-radius: 50%;
+  cursor: -webkit-grab;
+  cursor: grab;
+  width: 7px;
+  height: 7px;
+}
+ul .word .settings input[type=range]::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.add-words {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 155, 215, 0.75);
+  cursor: pointer;
+  margin: -15px 15px 0 0;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 50%;
+}
+.add-words:before, .add-words:after {
+  content: "";
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  margin: -1px 0 0 -7px;
+  width: 14px;
+  left: 50%;
+  top: 50%;
+}
+.add-words:before {
+  transform: rotate(90deg);
+}
+
+.play-state {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 22.5px 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+.play-state:before, .play-state:after {
+  content: "";
+  position: absolute;
+  transition: transform 0.1s ease-in-out;
+}
+.play-state:before {
+  border-left: 10px solid white;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin: -6px 0 0 -4px;
+  left: 50%;
+  top: 50%;
+  transform: translate(0, 0);
+}
+.play-state:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  box-shadow: 9px 0 0 0 white;
+  margin: -8px 0 0 -8px;
+  width: 5px;
+  height: 16px;
+  transform: translate(30px, 0);
+}
+.play-state.playing:before {
+  transform: translate(-30px, 0);
+}
+.play-state.playing:after {
+  transform: translate(0, 0);
+}
+
+.export, .import {
+  cursor: pointer;
+  border: 2px solid white;
+  vertical-align: middle;
+  padding: 10px;
+  margin: -30px 15px 0 0;
+  display: inline-block;
+  color: white;
+}
+
+aside {
+  position: absolute;
+  background-color: rgba(0, 155, 215, 0.9);
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+  color: white;
+  opacity: 0;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, top 0s linear 0.25s;
+}
+aside.active {
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, top 0s linear 0s;
+  opacity: 1;
+  top: 0;
+}
+aside.exporting .importing {
+  display: none;
+}
+aside.importing .exporting {
+  display: none;
+}
+aside .center {
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  width: 800px;
+  display: inline-block;
+  text-align: left;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+aside textarea {
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  outline: none;
+  border: none;
+  appearance: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  border: 2px solid white;
+  color: white;
+  box-sizing: border-box;
+  min-height: 350px;
+  padding: 15px;
+  margin: 15px 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  resize: none;
+}
+aside .close {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: -10px;
+}
+aside .close:before, aside .close:after {
+  content: "";
+  height: 2px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-color: #009bd7;
+  position: absolute;
+  margin: -1px 0 0 -7px;
+  width: 14px;
+  left: 50%;
+  top: 50%;
+}
+aside .close:before {
+  transform: rotate(-45deg);
+}
+aside .close:after {
+  transform: rotate(45deg);
+}
+
+.import, .export {
+  display: none;
+}

@@ -1,0 +1,25 @@
+body {
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #canvas {
+      max-width: 550px;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid orange;
+    }
+
+    .form-control {
+      background-color: orange;
+      color: black;
+    }
+
+    .btn {
+      background-color: orange;
+      color: black;
+    }

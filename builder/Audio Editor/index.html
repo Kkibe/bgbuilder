@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Singing Text To Speech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<menu>
+  <h1></h1>
+</menu>
+<main>
+  <ul class="words">
+    <div class="slider">
+      <li class="word">
+        <div class="position">
+          <input class="string" type="text" value="daisy">
+        </div>
+        <div class="settings">
+          <button class="play"></button>
+          <button class="delete"></button>
+          <label>Rate</label>
+          <input class="rate" type="range" min="0" value="5" max="50">
+          <label>Pitch</label>
+          <input class="pitch" type="range" min="0" value="150" max="200">
+        </div>
+      </li>
+      <li class="word">
+        <div class="position">
+          <input class="string" type="text" value="daisy">
+        </div>
+        <div class="settings">
+          <button class="play"></button>
+          <button class="delete"></button>
+          <label>Rate</label>
+          <input class="rate" type="range" min="0" value="5" max="50">
+          <label>Pitch</label>
+          <input class="pitch" type="range" min="0" value="125" max="200">
+        </div>
+      </li>
+      <li class="word">
+        <div class="position">
+          <input class="string" type="text" value="give me your">
+        </div>
+        <div class="settings">
+          <button class="play"></button>
+          <button class="delete"></button>
+          <label>Rate</label>
+          <input class="rate" type="range" min="0" value="5" max="50">
+          <label>Pitch</label>
+          <input class="pitch" type="range" min="0" value="100" max="200">
+        </div>
+      </li>
+      <li class="word">
+        <div class="position">
+          <input class="string" type="text" value="answer">
+        </div>
+        <div class="settings">
+          <button class="play"></button>
+          <button class="delete"></button>
+          <label>Rate</label>
+          <input class="rate" type="range" min="0" value="5" max="50">
+          <label>Pitch</label>
+          <input class="pitch" type="range" min="0" value="75" max="200">
+        </div>
+      </li>
+      <li class="word">
+        <div class="position">
+          <input class="string" type="text" value="do">
+        </div>
+        <div class="settings">
+          <button class="play"></button>
+          <button class="delete"></button>
+          <label>Rate</label>
+          <input class="rate" type="range" min="0" value="5" max="50">
+          <label>Pitch</label>
+          <input class="pitch" type="range" min="0" value="100" max="200">
+        </div>
+      </li>
+    </div>
+  </ul>
+  <button class="plus-sign add-words"></button>
+</main>
+<nav>
+  <button class="play-state"></button>
+  <select class="voice-name"></select><i></i>
+  <button class="export">Export</button>
+  <button class="import">Import</button>
+</nav>
+<aside>
+  <div class="center">
+    <p class="exporting">Copy and save this code.</p>
+    <p class="importing">Paste your code into the text area.</p>
+    <button class="close"></button>
+    <textarea></textarea>
+  </div>
+</aside>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

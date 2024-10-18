@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pixel Art Maker</title>
+    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/1.3.1/css/fontawesome-iconpicker.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+    <!-- Header area -->
+    <header>
+      <h1 class="left animated">Pixel Art Maker <i class="material-icons brush_logo">brush</i></h1>
+      <ul class="right signin-links">
+        <li><a href="#"><i class="material-icons signup-icon">account_circle</i>  Sign up</a></li>
+        <li>
+          <a href="#"> <i class="material-icons login-icon">face</i> Login</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Settings Area -->
+    <aside>
+      <div class="main-settings-area">
+        <!-- Grid sizing area -->
+        <div id="gridSettingsArea" class="hide-at-min">
+          <h2 class="hide-at-min">Choose Grid Size</h2>
+          <form>
+            <div class="form-inputs">
+              <div>
+                <label for="inputHeight">Grid Height</label>
+                <input class="purple-text text-darken-3 browser-default" type="number" id="inputHeight" name="height" min="1" data-currentheight="25" value="25">
+              </div>
+              <div>
+                <label for="inputWidth">Grid Width</label>
+                <input class="purple-text text-darken-3 browser-default" type="number" id="inputWidth" name="width" min="1" data-currentwidth="25" value="25">
+              </div>
+            </div>
+            <button type="submit" id="createGridButton" class="waves-effect btn btn-large purple darken-2 z-depth-2"><i class="small material-icons">grid_on</i> Create Grid</button>
+          </form>
+        </div>
+
+        <!-- Preset Grid sizing area -->
+        <div id="prebuiltGridArea">
+          <h3 class="hide-at-min">Preset Grids</h3>
+          <div class="size-button-group">
+            <button data-gridscale="50" class="btn btn-small lighten-2 waves-effect teal">50 X 50</button>
+            <button data-gridscale="70" class="btn btn-small lighten-2 waves-effect teal">70 X 70</button>
+            <button data-gridscale="100" class="btn btn-small lighten-2 waves-effect teal">100 X 100</button>
+            <button class="btn btn-small lighten-1 waves-effect red" id="resetButton">Reset</button>
+          </div>
+        </div>
+
+        <!-- Color Picker area -->
+        <div id="colorPickArea">
+          <i class="material-icons show-at-min">color_lens</i>
+          <h2 class="hide-at-min"><i class="material-icons">color_lens</i> Pick A Color</h2>
+          <input type="color" id="colorPicker" class="colorpicker-text" value="#7b1fa2">
+          <!-- <img src="http://moziru.com/images/mauve-clipart-splatter-4.png" class="splat" alt="paint splat"> -->
+        </div>
+      </div>
+
+      <div id="recentColorArea">
+        <h2><span class="recent-colors-length"></span> Recent Colors</h2>
+        <div id="recentColors"></div>
+      </div>
+    </aside>
+    <!-- end of aside/settings area -->
+
+    <!-- Canvas Area -->
+    <div id="canvasArea">
+      <h2>Design Canvas</h2>
+      <section class="canvas-top-row away animated">
+        <button class="btn btn-small waves-effect pink lighten-2" id="eraserButton"> <span class="eraser"></span> Eraser</button>
+        <button class="btn btn-small waves-effect purple darken-2" id="innerCircleButton"> <i class="material-icons">center_focus_strong</i> Inner Circle</button>
+      </section>
+      <table id="pixelCanvas" class="z-depth-4 animated"></table>
+    </div>
+
+
+    <!-- Footer area -->
+    <footer>
+      <ul>
+        <li><a href="https://discussions.udacity.com/u/chrisneal/summary">&copy;2018 Chris Neal</a></li>
+        <li><a href="#">Lesson 21: Pixel Art Maker Project</a></li>
+        <li><a href="https://www.udacity.com/grow-with-google">Udacity | Google Scholarship Challenge 2018</a></li>
+      </ul>
+    </footer>
+  </div>
+  <!-- /.container -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-awesome-cursor/0.3.1/jquery.awesome-cursor.js'></script>
+<script src='https://cdn.rawgit.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

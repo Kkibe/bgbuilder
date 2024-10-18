@@ -1,0 +1,256 @@
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+  border-radius: 20px;
+}
+
+
+main.disable form > *:not(.input, input *){
+  opacity: 0.7;
+  pointer-events: none;
+}
+form{
+  height: 100%;
+  flex: 1;
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  
+
+  padding: 15px 20px;
+  width: 270px;
+  border-radius: 5px;
+  border: 1px solid #0359c9;
+  background-color: rgb(195, 238, 198);
+  margin: 5px 5px;
+}
+
+form > div{
+  width: 100%;
+}
+
+h1{
+  font: 1.1em sans-serif;
+  color: #0359c9;
+  text-transform: uppercase;
+}
+
+form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font: 1.5em sans-serif;
+  }
+form label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font: 1em sans-serif;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  border-radius: inherit;
+}
+
+
+form input{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 0;
+    padding: 10px 3px;
+    border-radius: 5px;
+}
+
+form input[type="text"]:focus {
+    border: 2px solid black;
+    outline: none;
+  }
+
+form button{
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border-radius: 0.25rem;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border: none;
+    
+    font-weight: 500;
+    background-color: #464646;
+    position: relative;
+    text-align: center;
+  }
+  
+form button:hover{
+    background-color: #0359c9;
+  }
+  
+  form .input{
+    font-size: 14px;
+    border-radius: 0.25rem;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: #464646;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+  }
+
+.slider{
+    margin-top: 12px;
+  }
+.slider .filter-info{
+    display: flex;
+    justify-content: space-between;
+    font: 1em sans-serif;
+  }
+  .filter .slider input{
+    width: 100%;
+    height: 5px;
+    accent-color: #0359c9;
+  }
+
+  
+.input input {
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+
+  form .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+section{
+  width: 100%;
+  height: 100%;
+  min-height: 335px;
+  max-width: 900px;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  flex: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  
+
+  border: none;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23ccc' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-color: transparent;
+}
+
+section input{
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+
+
+section:hover, section:focus {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232e44ff' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  cursor: pointer;
+}
+
+
+
+.preview-area-icon {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.preview-area-icon svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.preview-area-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  display: block;
+  font-weight: 700;
+  color: #0359c9;
+}
+
+.preview-area-description {
+  width: 100%;
+  text-align: center;
+  
+}
+.preview-area-description strong {
+  color: #0d0f21;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.preview-hidden *:not(#meme){
+  display: none;
+}
+
+section #meme{
+  width: calc(100% - 40px);
+  height: 100%;
+  flex: 5;
+  position: absolute;
+  z-index: -1;
+}
+
+.section-hidden *:not(#meme){
+  display: none;
+
+}

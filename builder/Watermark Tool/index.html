@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Watermark Tool</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Watermark App</h1>
+        <form>
+          <div class="form-group">
+            <label for="file-input">Select Image File:</label>
+            <input type="file" class="form-control" id="file-input">
+          </div>
+          <div class="form-group">
+            <label for="watermark-select">Select Watermark Image:</label>
+            <select class="form-control" id="watermark-select">
+<option value="https://photos.bobclark.com/watermark/images/bc_logo_black_gradient.png">bc_logo_black_gradient.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_logo_color.png">bc_logo_color.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_logo_color_blackletters.png">bc_logo_color_blackletters.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_logo_grey_raised.png">bc_logo_grey_raised.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_logo_white.png">bc_logo_white.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_photo_logo.png">bc_photo_logo.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_photo_logo_profile.png">bc_photo_logo_profile.png</option>
+				<option value="https://photos.bobclark.com/watermark/images/bc_logo_500.png">bc_logo_500.png</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-default" id="save-btn">Save Image</button>
+        </form>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </div>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://code.jquery.com/ui/1.13.0/jquery-ui.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

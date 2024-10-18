@@ -1,0 +1,157 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  float: left;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 50%;
+  min-width: 600px;
+  height: auto;
+  max-height: 75%;
+  margin: 0;
+  padding: 2em;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 0 1em 0 dimgrey;
+  background: #1f263b;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.modal h1, .modal h3, .modal span {
+  font-family: "Raleway";
+  font-weight: 300;
+  color: #f9f9f9;
+}
+.modal h1 {
+  text-transform: uppercase;
+}
+.modal input {
+  width: 100%;
+  height: 2em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: #f9f9f9;
+  font-family: "Raleway";
+  font-size: 1.2em;
+}
+.modal span {
+  width: 1em;
+  height: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #d9534f;
+  line-height: auto;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.modal span:hover {
+  background: #d1332e;
+}
+
+.hiddenModal {
+  visibility: hidden;
+  opacity: 0;
+}
+
+div#introModal a {
+  color: orange;
+}
+
+div#toolbar {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+  background: #1f263b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+div#toolbar i {
+  padding: 15px;
+  position: relative;
+  float: left;
+  color: #f9f9f9;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+div#toolbar i span {
+  padding: 0.5em 1em;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%);
+  background: #f9f9f9;
+  box-shadow: 0 0 0.5em 0 dimgrey;
+  color: black;
+  font-size: 0.5em;
+  font-family: "Roboto";
+  font-weight: 300;
+  text-align: center;
+  visibility: hidden;
+}
+div#toolbar i span::after {
+  margin-left: -8px;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #f9f9f9 transparent transparent transparent;
+}
+div#toolbar i:hover {
+  color: #354164;
+}
+div#toolbar i:hover span {
+  visibility: visible;
+}
+div#toolbar i:last-child {
+  float: right;
+}
+
+i#crosshairElement {
+  display: none;
+  font-size: 1em;
+  pointer-events: none;
+}
+i#crosshairElement :hover {
+  display: none;
+}
+
+div[id*=Display] {
+  width: 100%;
+  height: 300px;
+  background: #fff;
+}

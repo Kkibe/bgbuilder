@@ -1,0 +1,518 @@
+:root {
+  --main-color: #7b1fa2;
+  --base-font-family: Arial, sans-serif;
+  --main-font: Montserrat;
+  --button-transition: transform 0.1s ease-in-out;
+  --colorinput-textcolor: #83838a;
+}
+
+/***************** Global styles *****************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font), var(--base-font-family);
+  margin: 0;
+  margin: 5px;
+  padding-top: calc(1.2em - 5px);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+/***************** Table styles ******************/
+table,
+tr,
+td {
+  border: 1px solid black;
+  padding: 0;
+  vertical-align: inherit;
+  border-radius: 0;
+}
+
+table {
+  border-width: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 3rem auto 0;
+  width: auto;
+  transition: border-radius 0.5s ease-in-out;
+}
+
+table.inner-circle {
+  border-radius: 40em;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/************** .container & grid styles *********/
+.container {
+  width: 80%;
+  max-width: 1460px;
+  min-width: 1070px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: [aside-start] 1fr [aside-end] 1fr [canvas-start] 1fr [midcanvas-start] 1fr [midcanvas-end] 1fr [canvas-end];
+  grid-template-rows: 60px repeat(11, minmax(100px, auto));
+  grid-column-gap: 10px;
+}
+
+/* general section styles */
+header,
+aside,
+#canvasArea {
+  background-color: #fff;
+}
+
+aside h2,
+aside h3,
+#canvasArea h2 {
+  margin-bottom: 1em;
+}
+
+aside,
+#canvasArea {
+  grid-row: 2/13;
+  padding-top: 1.8em;
+}
+
+#canvasArea h2,
+label,
+header h1,
+aside h2,
+aside h3 {
+  color: var(--main-color);
+  font-weight: lighter;
+}
+
+.gridSizeString {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+/* button styles */
+.btn:active {
+  transform: translateY(2px);
+}
+
+/***************** header styles *****************/
+header {
+  grid-column: aside-start/canvas-end;
+}
+
+header h1 {
+  font-weight: bolder;
+  font-size: 2.8em;
+  font-family: "Love Ya like A Sister", var(--base-font-family);
+  text-shadow: 5px 2px 5px lightgray;
+  width: 50%;
+}
+
+header .material-icons {
+  font-size: 2.4rem;
+}
+
+/* sign up and login icon styles */
+.signin-links {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 12px;
+}
+
+a .signup-icon,
+a .login-icon {
+  font-size: 25px;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+
+.signin-links li {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+.signin-links li:first-child {
+  margin-right: 2rem;
+}
+
+.signin-links a:hover {
+  color: var(--main-color);
+  transition: all 0.2s ease-in-out;
+}
+
+/***************** aside styles ******************/
+aside {
+  grid-column: aside-start/aside-end;
+  padding-bottom: 1.5rem;
+}
+
+#gridSettingsArea,
+#prebuiltGridArea {
+  margin-bottom: 2rem;
+}
+
+/* Grid sizing area styles */
+.form-inputs {
+  margin-bottom: 0.5rem;
+}
+
+.form-inputs label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.4em;
+}
+
+input[type=number] {
+  width: 6.4em;
+  max-width: 10em;
+  margin-bottom: 2rem;
+  border: none;
+  border-bottom: 1px solid #a793cb;
+  padding-bottom: 0.6em;
+  font-size: 30px;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+#gridSettingsArea .btn-large {
+  padding: 0;
+  width: 200px;
+  transition: var(--button-transition);
+  margin: 0;
+}
+
+#gridSettingsArea .btn-large,
+#prebuiltGridArea .btn {
+  margin-bottom: 2rem;
+}
+
+/* Prebuilt Grid Area styles */
+#prebuiltGridArea .btn {
+  transition: var(--button-transition);
+}
+
+.btn-large i {
+  position: relative;
+  top: 3px;
+  left: -2px;
+  font-size: 1.2em;
+}
+
+.size-button-group .btn {
+  margin: 0;
+  margin-right: 1rem;
+  padding: 0;
+  width: 200px;
+  line-height: initial;
+}
+
+/* Color picker area styles */
+.show-at-min {
+  display: none;
+}
+
+#colorPickArea .material-icons,
+#recentColorArea .material-icons {
+  position: relative;
+  top: 0.2rem;
+}
+
+#colorPickArea {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#colorPicker {
+  height: 40px;
+  width: 150px;
+  margin: -0.5em 0 2em;
+}
+
+.colorpicker-text {
+  color: var(--colorinput-textcolor);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#colorPicker:focus {
+  outline: none;
+}
+
+.color-code {
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  left: -160px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+/* recent color area styles */
+#recentColorArea {
+  z-index: 1;
+  position: relative;
+}
+
+#recentColors {
+  width: 250px;
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+
+.recent-color-object {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-bottom: 0.9rem;
+  margin-right: 10px;
+}
+
+.recent-color-object:first-child {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 3.5rem;
+  left: -70px;
+}
+
+/* canvas area styles */
+#canvasArea {
+  grid-column: aside-end/canvas-end;
+  margin: 2em 0 4.5em;
+}
+
+#canvasArea h2 {
+  text-align: center;
+}
+
+.canvas-top-row.away {
+  display: none;
+}
+
+.canvas-top-row i {
+  position: relative;
+  top: 3px;
+}
+
+#innerCircleButton,
+#eraserButton {
+  line-height: initial;
+  padding: 0 1rem;
+  margin: 0 0.4rem;
+}
+
+#innerCircleButton {
+  min-width: 192.17px;
+}
+
+#eraserButton {
+  min-width: 130.31px;
+}
+
+.eraser {
+  width: 18px;
+  height: 18px;
+  background: white;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  left: -4px;
+  border-radius: 50px;
+}
+
+/***************** footer styles ***************/
+footer {
+  grid-column: aside-end/canvas-end;
+  margin-bottom: 3em;
+  font-weight: lighter;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer a {
+  text-decoration: none;
+  color: #c4bcc4;
+  transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: var(--main-color);
+}
+
+footer li {
+  display: inline-block;
+}
+
+/******************* Media query styles *******************/
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+
+  aside {
+    padding: 0;
+    margin: 0;
+  }
+
+  aside h2 {
+    margin-bottom: 2rem;
+  }
+
+  .main-settings-area {
+    display: flex;
+  }
+
+  /* grid-sizing area */
+  #gridSettingsArea form {
+    flex-flow: column wrap;
+  }
+
+  .form-inputs {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #inputHeight,
+#inputWidth {
+    width: 80%;
+  }
+
+  #createGridButton {
+    padding: 30px 0;
+    line-height: 0;
+    width: 50%;
+  }
+
+  /* prebuilt grid area  */
+  #prebuiltGridArea {
+    display: flex;
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  .size-button-group {
+    display: flex;
+    width: 100%;
+  }
+
+  /* color picker area */
+  .hide-at-min {
+    display: none;
+  }
+
+  .show-at-min {
+    display: inline-block;
+  }
+
+  #colorPickArea {
+    flex: 1;
+    top: 0.5rem;
+  }
+
+  #colorPickArea .material-icons {
+    display: inline;
+    top: -1px;
+    color: var(--main-color);
+  }
+
+  #colorPicker {
+    margin-bottom: 1em;
+  }
+
+  /* recent colors area */
+  #recentColorArea {
+    height: 101.5px;
+    max-height: 114.5px;
+  }
+
+  #recentColors {
+    width: 100%;
+    height: auto;
+    overflow: initial;
+  }
+
+  .recent-colors-length {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .recent-color-object {
+    margin-bottom: 0;
+  }
+
+  .recent-color-object:first-child {
+    top: -1.7rem;
+    left: 15rem;
+  }
+
+  /* canvas area */
+  #canvasArea {
+    padding: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 1245px) {
+  .color-code {
+    top: -10px;
+    left: 25px;
+  }
+}

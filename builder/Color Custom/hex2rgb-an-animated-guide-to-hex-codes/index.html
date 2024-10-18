@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Hex2RGB | An Animated Guide to Hex Codes</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main id="app">
+	<div class="bg-graphic"></div>
+	<section class="hero">
+		<div class="logo-wrapper">
+			<div class="logo-bar">
+				<div class="logo">
+					<h1 class="logotext">
+						<span class="purple">HEX</span
+                ><span class="bigger-center-txt">2</span
+                ><span class="red">R</span><span class="green">G</span
+                ><span class="blue">B</span>
+					</h1>
+				</div>
+				<p class="tagline">An Animated Guide to Hex Codes</p>
+			</div>
+
+		</div>
+		<span id="header-animation">
+                <div class="hex-container">
+                  <svg
+                    id="blue"
+                    class="blue header-animated-hex"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 502.1 434.83"
+                  >
+                    <defs></defs>
+                    <title></title>
+                    <polygon
+                      points="376.58 0 125.53 0 0 217.42 125.53 434.83 376.58 434.83 502.1 217.42 376.58 0"
+                    />
+                  </svg>
+                  <svg
+                    id="red"
+                    class="red header-animated-hex"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 502.1 434.83"
+                  >
+                    <defs></defs>
+                    <title></title>
+                    <polygon
+                      points="376.58 0 125.53 0 0 217.42 125.53 434.83 376.58 434.83 502.1 217.42 376.58 0"
+                    />
+                  </svg>
+                  <svg
+                    id="green"
+                    class="green header-animated-hex"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 502.1 434.83"
+                  >
+                    <defs></defs>
+                    <title></title>
+                    <polygon
+                      points="376.58 0 125.53 0 0 217.42 125.53 434.83 376.58 434.83 502.1 217.42 376.58 0"
+                    />
+                  </svg>
+                </div>
+                <svg
+                  id="motion-path-wrapper"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="-0.95 -1.25 1045.05 263.23"
+										 style="width:0; height:0;"
+										 
+                >
+                  <defs></defs>
+
+                  <title>path</title>
+                  <path
+                    id="motionPath"
+                    d="M1.5,125.5c-8,465,1044-426,1044,0C1045.5,534.2,8.78-297.78,1.5,125.5Z"
+                  />
+                </svg>
+              </span>
+		<div class="intro">
+			<h2>
+				What are hex codes even?
+			</h2>
+			<span class="example-hex setBlack">
+				<span class="pwd">#</span>
+			<span class="red">95</span>
+			<span class="green">75</span>
+			<span class="blue">CD</span>
+			</span>
+			<p>
+				Hex codes are away to communicate a color value, to our browsers and eventually the computer. These are very similar to hsl and rgb values. Hsl and rgb have a clear and easy to read syntax. Hex codes unfortunately have a much more confusing syntax.
+			</p>
+			<div class="color-codes-example">
+
+				<span class="example">
+					<span class="">#</span>
+				<span class="">95</span>
+				<span class="">75</span>
+				<span class="">CD</span>
+				</span>
+
+				<span class="example">
+					<span class="pwd">rgb(</span>
+				<span class="">95,</span>
+				<span class="">75,</span>
+				<span class="">75</span>
+				<span class="pwd">)</span>
+				</span>
+
+				<span class="example">
+					<span class="pwd">hsl(</span>
+				<span class="">262%,</span>
+				<span class="">47%,</span>
+				<span class="">63%</span>
+				<span class="pwd">)</span>
+				</span>
+
+			</div>
+			<div class="divider from-guide">
+				<h3>Believe it or not its not all Globity-Gook!</h3>
+				<p>
+					Lets disect hex codes to make them easier to read and understand!
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="hex-16based">
+		<h2>Hex codes are made up of 16 possible values</h2>
+		<p>
+			Hex codes are comprised of 6 values that are apart of the hexidecimal system, or base 16. Instead of 10 values like we are used to (0-9), there are 16. Thats where those confusing letters come from.
+		</p>
+		<!-- show the animated 16 values-->
+		<div class="base-16-wheel">
+			<div class="wrapper">
+				<div class="bg"></div>
+				<div class="slide -0" style="--delay:0">F</div>
+				<div class="slide -1" style="--delay:-1">E</div>
+				<div class="slide -2" style="--delay:-2">D</div>
+				<div class="slide -3" style="--delay:-3">C</div>
+				<div class="slide -4" style="--delay:-4">B</div>
+				<div class="slide -5" style="--delay:-5">A</div>
+				<div class="slide -6" style="--delay:-6">9</div>
+				<div class="slide -7" style="--delay:-7">8</div>
+				<div class="slide -8" style="--delay:-8">7</div>
+				<div class="slide -9" style="--delay:-9">6</div>
+				<div class="slide -A" style="--delay:-10">5</div>
+				<div class="slide -B" style="--delay:-11">4</div>
+				<div class="slide -D" style="--delay:-12">3</div>
+				<div class="slide -E" style="--delay:-13">2</div>
+				<div class="slide -F" style="--delay:-14">1</div>
+				<div class="slide -F" style="--delay:-15">0</div>
+			</div>
+			<p>16 possible values</p>
+		</div>
+		<p>Each letter represents a number.</p>
+		<div class="letters2nums">
+			<ul class="">
+				<li>
+					<span class="letr">a </span>
+					<span class="num">10</span>
+				</li>
+				<li>
+					<span class="letr">b</span>
+					<span class="num">11</span>
+				</li>
+				<li>
+					<span class="letr">c</span>
+					<span class="num">12</span>
+				</li>
+				<li>
+					<span class="letr">d</span>
+					<span class="num">13</span>
+				</li>
+				<li>
+					<span class="letr">e</span>
+					<span class="num">14</span>
+				</li>
+				<li>
+					<span class="letr">f</span>
+					<span class="num">15</span>
+				</li>
+			</ul>
+			<p>Hover over the a letter to see its value.</p>
+		</div>
+
+	</section>
+	<section class="hex-pairing">
+		<h2>Thats Great and all, but how does that make colors</h2>
+		<div class="animated-hex-wrapper">
+			<span class="example-hex b-val-animated">
+					<span class="pwd">#</span>
+			<span class="red">95</span>
+			<span class="green">75</span>
+			<span class="blue">
+						<ul class="slide-down">
+							<li>2e</li>
+							<li>5f</li>
+							<li>75</li>
+							<li>a5</li>
+						</ul>
+			</span>
+
+			</span>
+			<div class="color-block"></div>
+		</div>
+		<p>
+			Hex codes are comprised of 6 values. There are 3 pairs of values in a hex code. The first two numbers show how much <span class="red">red</span> should be added. The next tell how much <span class="green">green</span>, and the next tells how much <span class="blue">blue</span> to add. This kind of sounds a lot like RGB.
+		</p>
+	</section>
+	<section class="hex-converts-to">
+		<h2>Under the hood</h2>
+		<p>
+			So we now know that hex codes are just pairs of values that represent <span class="red">red</span>, <span class="green">green</span>, and <span class="blue">blue</span> amounts. Which is kind of like rgb. Its actually even closer to rgb than just that. The values in hex code start at 0 and go to 255, just like in rgb.
+		</p>
+	</section>
+
+	<div class="divider from-user">
+		<h3>Enough theory how do we go from<br/> hex to rgb</h3>
+	</div>
+	<section class="algorithm">
+		<h2>Lets Get Converting</h2>
+		<div class="">
+			<span class="example-hex">#
+            <span class="red">E5</span>
+			<span class="green">73</span>
+			<span class="blue">73</span>
+			</span>
+
+		</div>
+		<p>Take this hex code for example</p>
+		<ol>
+			<li id="step-1">
+				<h4>Start with the first pair of values</h4>
+				<p>for us that is <span class="large-hex"><span class="inline">E5</span></span>
+				</p>
+			</li>
+			<li id="step-2">
+				<h4>Convert any letters to their hexdecimal value</h4>
+				<div class="letters2nums">
+					<ul class="">
+						<li>
+							<span class="letr">a </span>
+							<span class="num">10</span>
+						</li>
+						<li>
+							<span class="letr">b</span>
+							<span class="num">11</span>
+						</li>
+						<li>
+							<span class="letr">c</span>
+							<span class="num">12</span>
+						</li>
+						<li>
+							<span class="letr">d</span>
+							<span class="num">13</span>
+						</li>
+						<li>
+							<span class="letr">e</span>
+							<span class="num">14</span>
+						</li>
+						<li>
+							<span class="letr">f</span>
+							<span class="num">15</span>
+						</li>
+					</ul>
+					<p>Hover over the a letter to see its value.</p>
+					<div class="current-point">
+						<p>we now have</p>
+						<div class="value"><span class="val">14</span><span>and</span><span class="val">5</span></div>
+
+					</div>
+				</div>
+			</li>
+			<li id="step-3">
+				<h4 class="hctm">
+					Muiltiply one of the values by 16 to the power of the values place in the pair
+				</h4>
+				<span class="example-hex place-value">#
+            <span class="red"><span class="border" data-place="1">E</span> <span class="border" data-place="0">5</span></span>
+				<span class="green">73</span>
+				<span class="blue">73</span>
+				</span>
+				<p>
+					We are going to start with the 0's place, which for us is 5, and we will multiply this by
+					<span class="hint" data-hint="1">16<sup>0</sup></span>, since 5 is in the 0th place.
+				</p>
+				<div class="equation">
+					5 &times; 16<sup>0</sup> = 5
+				</div>
+				<p>
+					Next do the same for the E, which is in the 1s place. We will multiply E (which is equal to 14) by
+					<span class="hint" data-hint="16">16<sup>1</sup></span>
+				</p>
+				<div class="equation">
+					14 &times; 16<sup>1</sup> = 224
+				</div>
+				<div class="current-point">
+					<p>we now have</p>
+					<div class="value"><span class="val">224</span><span>and</span><span class="val">5</span></div>
+
+				</div>
+			</li>
+			<li id="step-4">
+				<h4>Now smush'em together</h4>
+				<div class="smushin-em">
+					<div class="smushem__wrapper">
+						<div class="left" style="--dir:1">
+							<div class="text">224</div>
+						</div>
+						<div class="right" style="--dir:-1">
+							<div class="text">5</div>
+						</div>
+						<div class="equates">229</div>
+					</div>
+				</div>
+				<p>
+					We will add our two values together to get the value of the amount red that will be in our color.
+				</p>
+				<div class="current-point">
+					<p>we now have</p>
+					<div class="value"><span class="val">229</span></div>
+
+				</div>
+			</li>
+
+			<li id="step-5">
+				<h4>Rinse, and Repeat</h4>
+				<p>
+					Now do the same for the <span class="green">green</span> and
+					<span class="blue">blue</span> pairs.
+				</p>
+				<p>
+					After completing the
+					<spand class="green">green</spand>and <span class="blue">blue</span> pairs. Check to see if you were correct below.
+				</p>
+				<span class="example-hex hover-results"><span class="pwd">#</span>
+				<span class="red results" style="--color:#e57373">
+							<span class="show-hex">E5</span>
+				<span class="show-res">229</span>
+				</span>
+				<span class="green results" style="--color:#a5d6a7">
+						<span class="show-hex">73</span>
+				<span class="show-res">115</span>
+				</span>
+				<span class="blue results" style="--color:#81d4fa">
+						<span class="show-hex">73</span>
+				<span class="show-res">115</span>
+				</span>
+				</span>
+				<p style="font-size:75%">hover to see the converted value.</p>
+				<div class="current-point">
+					<p>we now have</p>
+					<div class="value"><span class="val">rgb(229,115,115)</span></div>
+
+				</div>
+			</li>
+		</ol>
+	</section>
+	<div class="divider from-guide">
+		👍
+		<h3>Great work, You did it!!!</h3>
+	</div>
+	<section class="converter">
+		<h2>In case you didnt do the math with us</h2>
+		<p>Here is a hex to rgb converter that uses the above algorithm.</p>
+		<div id="converter">
+			<h3>Hex 2 RGB Converter</h3>
+			<div class="converter__wrapper">
+				<div class="color-block">rgb(255,255,255)</div>
+				<div class="converter__hex">
+					<span class="hash">#</span> <input type="text" />
+					<button>convert</button>
+				</div>
+				<div class="error"></div>
+			</div>
+		</div>
+	</section>
+	<section class="take-away">
+		<h2>Take Aways!</h2>
+		<p>
+			Obviously RGB and HSL values are much easier to write and more human friendly than hex codes are. However, now you know that hex codes are not just some globity-gook mess only computers can read, and are really closley related to rgb. Now that you know the basics you can kind of guess that
+			#ff 00 00 is going to look red since is pair are the only ones that have a value, or #05ff22 is going to look greenish due how much green it has. 
+		</p>
+	</section>
+</main>
+
+<svg viewBox="0 0 100 100" style="height:0; width:0;">
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          result="goo"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 60 -13"
+        />
+        <feComposite in="SourceGraphic" in2="goo" />
+      </filter>
+    </svg>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+<script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
